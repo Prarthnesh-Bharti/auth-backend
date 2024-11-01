@@ -19,6 +19,11 @@ app.use(cors({ origin: "http://0.0.0.0:5173", credentials: true }));
 app.use(express.json()); // allows us to parse incoming requests:req.body
 app.use(cookieParser()); // allows us to parse incoming cookies
 
+
+app.get("/",(req,res)=>{
+	res.send("This is Home Page");
+});
+
 app.use("/api/auth", authRoutes);
 
 if (process.env.NODE_ENV === "production") {
